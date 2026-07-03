@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="w-full bg-white">
+        <section id="hero" className="w-full pt-24 bg-white">
             {/* split content */}
             <div className="max-w-7xl mx-auto px-8 md:px-16 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 {/* Left side content */}
@@ -23,7 +23,7 @@ export default function Hero() {
 
                     {/* CTA buttons */}
                     <div className="flex flex-wrap gap-4 pt-2">
-                        <a href="#projects" className="flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-all">
+                        <a href="#selected-projects" className="flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.008 1.24l.885 1.77a2.25 2.25 0 0 0 2.007 1.24h1.98a2.25 2.25 0 0 0 2.007-1.24l.885-1.77a2.25 2.25 0 0 1 2.007-1.24h3.86m-18 0h18a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v4.5m18 3V19.5A2.25 2.25 0 0 1 19.5 21.75h-15a2.25 2.25 0 0 1-2.25-2.25V13.5" />
                             </svg>

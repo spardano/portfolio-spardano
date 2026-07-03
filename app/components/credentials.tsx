@@ -23,7 +23,7 @@ export default function Credentials() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           {/* Column 1: Education */}
-          <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6">
+          <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6 transition-transform hover:-translate-y-1 duration-200">
             <h3 className="text-xl font-bold text-black tracking-tight">
               Education
             </h3>
@@ -48,7 +48,7 @@ export default function Credentials() {
           </div>
 
           {/* Column 2: Certification and Training */}
-          <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6">
+          <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6 transition-transform hover:-translate-y-1 duration-200">
             <h3 className="text-xl font-bold text-black tracking-tight">
               Certification and Training
             </h3>
@@ -67,7 +67,7 @@ export default function Credentials() {
           </div>
 
           {/* Column 3: Language */}
-          <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6">
+          <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6 transition-transform hover:-translate-y-1 duration-200">
             <h3 className="text-xl font-bold text-black tracking-tight">
               Language
             </h3>

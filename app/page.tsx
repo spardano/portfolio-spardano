@@ -6,17 +6,21 @@ import Skills from "./components/skills";
 import Experience from "./components/experience";
 import Credentials from "./components/credentials";
 import Contact from "./components/contact";
+import SelectedProjects from "./components/selectedProjects";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
-       <Headers />
+    <div className="relative min-h-screen bg-white overflow-visible">
+      <Headers />
+      <main className="w-full overflow-visible">
         <Hero />
         <Services />
         <Skills />
         <Experience />
         <Credentials />
+        <SelectedProjects />
         <Contact />
-    </main>
+      </main>
+    </div>
   );
 }

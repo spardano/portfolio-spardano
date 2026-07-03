@@ -49,14 +49,16 @@ export default function Experience() {
           {experienceData.map((exp, index) => (
             <div 
               key={index} 
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 py-10 items-start"
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 py-10 items-start
+                         transition-all duration-300 ease-out origin-left
+                         hover:scale-[1.01] cursor-default"
             >
               {/* Column 1: Duration & Dates */}
               <div className="md:col-span-3 space-y-1">
                 <h3 className="text-2xl font-black text-black tracking-tight">
                   {exp.duration}
                 </h3>
-                <p className="text-sm text-gray-500 font-medium">
+                <p className="text-sm md:text-sm text-gray-500 font-medium">
                   {exp.period}
                 </p>
               </div>
@@ -73,7 +75,7 @@ export default function Experience() {
 
               {/* Column 3: Job Description Text */}
               <div className="md:col-span-5">
-                <p className="text-gray-700 text-sm md:text-base leading-relaxed text-justify md:text-left">
+                <p className="text-black text-sm md:text-base leading-relaxed text-justify md:text-left">
                   {exp.description}
                 </p>
               </div>
