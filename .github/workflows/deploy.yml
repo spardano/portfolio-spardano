@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-node: '20'
+          node-version: '22'
           cache: npm # change to yarn/pnpm if using those
       - name: Install dependencies
         run: npm ci
