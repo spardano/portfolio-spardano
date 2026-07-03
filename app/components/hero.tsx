@@ -58,7 +58,7 @@ export default function Hero() {
                         {/* Image Placeholder */}
                         <div className='absolute bottom-0 right-4 w-[280px] md:w-[320px] h-[115%] z-20 pointer-events-none'>
                             <Image 
-                                src="/profile.png" 
+                                src="../public/profile.png" 
                                 alt="Hero Image" 
                                 fill
                                 className="object-contain object-bottom"
