@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfilePic from '../public/profile.png';
 import Image from "next/image";
 
 export default function Hero() {
@@ -58,7 +59,7 @@ export default function Hero() {
                         {/* Image Placeholder */}
                         <div className='absolute bottom-0 right-4 w-[280px] md:w-[320px] h-[115%] z-20 pointer-events-none'>
                             <Image 
-                                src="../public/profile.png" 
+                                src={ProfilePic}
                                 alt="Hero Image" 
                                 fill
                                 className="object-contain object-bottom"
