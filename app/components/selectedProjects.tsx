@@ -1,5 +1,14 @@
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+import sbhImage from '../../public/selectedProjects/sbh.png';
+import vocalityImage from '../../public/selectedProjects/vocality.png';
+import comanoImage from '../../public/selectedProjects/comano.png';
+import travelgoImage from '../../public/selectedProjects/travelgo.png';
+import emociImage from '../../public/selectedProjects/emoci.png';
+import jasarekberImage from '../../public/selectedProjects/jasarekber.png';
+import sandiwaraImage from '../../public/selectedProjects/sandiwara.png';
+import pusdigiImage from '../../public/selectedProjects/pusdigi.png';
+import tppImage from '../../public/selectedProjects/tpp.png';
 
 interface Project {
   title: string;
@@ -14,57 +23,60 @@ export default function SelectedProjects() {
       title: "SBG Mobile",
       description: "Super-app yang integrasi berbagai layanan administrasi publik dalam sebuah aplikasi",
       tags: ["Flutter", "Geolocation", "API"],
-      imageSrc:'../../public/selectedProjects/sbh.png',
     },
     {
       title: "Vocality",
       description: "Aplikasi yang mengimplemenntasikan Machine Learning untuk melatih dan mengevaluasi vokal",
-      imageSrc:'../../public/selectedProjects/vocality.png',
       tags: ["Swift", "iOS", "Core ML"],
     },
     {
       title: "Comano",
       description: "Apliasi iPAD untuk membantu pengguna melatih verbal untuk kebutuhan public speaking",
       tags: ["Swift", "AI", "AVFoundation", "MotionCapture"],
-      imageSrc:'../../public/selectedProjects/comano.png',
     },
     {
       title: "TravelGO Web",
       description: "Aplikasi pembelian tiket transportasi antar-provinsi yang terintegrasi payment gateway dan geolocation",
       tags: ["Payment Gateway", "Laravel", "Filament", "Vue"],
-      imageSrc:'../../public/selectedProjects/travelgo.png',
     },
     {
       title: "Emoci",
       description: "Aplikasi teman curhat aman dan privat yang menginkorporasi Gemini AI.",
       tags: ["Swift", "iOS", "AI"],
-      imageSrc:'../../public/selectedProjects/emoci.png',
     },
     {
       title: "JasaRekber Mobile",
       description: "Aplikasi rekening bersama, memberikan wadah aman untuk pembeli dan penjual bertransaksi.",
       tags: ["Ionic", "Angular", "Restful-API", "Firebase"],
-      imageSrc:'../../public/selectedProjects/jasarekber.png',
     },
     {
       title: "Sandiwara News Mobile",
       description: "Aplikasi berita yang mengandalkan API publik untuk mendapatkan berita terbaru.",
       tags: ["Swift", "iOS", "Core ML"],
-      imageSrc:'../../public/selectedProjects/sandiwara.png',
     },
     {
       title: "Perpustakaan Digital",
       description: "Aplikasi peminjaman koleksi e-book yang dimiliki perpustakaan kota Bukittinggi.",
       tags: ["Swift", "iOS", "AI"],
-      imageSrc:'../../public/selectedProjects/pusdigi.png',
     },
     {
       title: "TPP Bukittinggi",
       description: "Aplikasi penghitungan Tambahan Tunjangan Pegawai (TPP) yang terintegrasi presensi.",
       tags: ["Swift", "iOS", "AI"],
-      imageSrc:'../../public/selectedProjects/tpp.png',
     }
   ];
+
+  const imageMap: { [key: string]: StaticImageData } = {
+    "SBG Mobile": sbhImage,
+    "Vocality": vocalityImage,
+    "Comano": comanoImage,
+    "TravelGO Web": travelgoImage,
+    "Emoci": emociImage,
+    "JasaRekber Mobile": jasarekberImage,
+    "Sandiwara News Mobile": sandiwaraImage,
+    "Perpustakaan Digital": pusdigiImage,
+    "TPP Bukittinggi": tppImage
+  };
 
   return (
     <section id="selected-projects" className="w-full bg-white py-16 px-8 md:px-16">
@@ -86,7 +98,7 @@ export default function SelectedProjects() {
               {/* Thumbnail Image Render Space */}
               {project.imageSrc && (
                 <Image 
-                  src={project.imageSrc} 
+                  src={imageMap[project.title]}
                   alt={project.title} 
                   fill 
                   className="object-cover"
