@@ -102,9 +102,18 @@ export default function Footer() {
                 {emailAddress}
               </span>
 
-              {/* Subtle layout circle placeholder from your design mapping */}
-              <span className={`w-4 h-4 rounded-full transition-colors duration-300 ${copied ? 'bg-green-500' : 'bg-gray-300'}`}></span>
-              
+              <span className={`flex items-center justify-center w-9 h-9 rounded-full transition-colors duration-300 ${copied ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700'}`}>
+                {copied ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17Z" fill="currentColor" />
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 11C6 8.17157 6 6.75736 6.87868 5.87868C7.75736 5 9.17157 5 12 5H15C17.8284 5 19.2426 5 20.1213 5.87868C21 6.75736 21 8.17157 21 11V16C21 18.8284 21 20.2426 20.1213 21.1213C19.2426 22 17.8284 22 15 22H12C9.17157 22 7.75736 22 6.87868 21.1213C6 20.2426 6 18.8284 6 16V11Z" stroke="#1C274C" strokeWidth="1.5"/>
+                    <path d="M6 19C4.34315 19 3 17.6569 3 16V10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H15C16.6569 2 18 3.34315 18 5" stroke="#1C274C" strokeWidth="1.5"/>
+                  </svg>
+                )}
+              </span>
             </button>
 
              {/* Smooth fading confirmation message below the button */}
