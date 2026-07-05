@@ -14,7 +14,6 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  imageSrc?: string;
 }
 
 export default function SelectedProjects() {
@@ -96,7 +95,7 @@ export default function SelectedProjects() {
                          transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-md"
             >
               {/* Thumbnail Image Render Space */}
-              {project.imageSrc && (
+              {imageMap[project.title] && (
                 <Image 
                   src={imageMap[project.title]}
                   alt={project.title} 
