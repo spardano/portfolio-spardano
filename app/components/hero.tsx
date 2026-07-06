@@ -19,7 +19,7 @@ export default function Hero() {
                     </div>
 
                     <p className="text-gray-600 text-base md:text-gray-900 leading-tight">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Design and build scalable full-stack mobile and web products, from government-scale platforms to consumer applications. 5+ years turning research and requirements into shipped working apps.
                     </p>
 
                     {/* CTA buttons */}
@@ -51,8 +51,8 @@ export default function Hero() {
 
                             {/* Stat Box 2 */}
                             <div className="border border-white/40 bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-white w-40">
-                                <h3 className="text-3xl font-bold">20+</h3>
-                                <p className="text-xs text-white/80 font-medium mt-1 leading-tight">Apps Development Projects</p>
+                                <h3 className="text-3xl font-bold">15+</h3>
+                                <p className="text-xs text-white/80 font-medium mt-1 leading-tight">Apps Builts and Maintained</p>
                             </div>
                         </div>
 

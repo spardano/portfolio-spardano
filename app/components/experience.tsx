@@ -17,21 +17,21 @@ export default function Experience() {
       period: "Mar 2025 - Dec 2025",
       role: "iOS Developer",
       company: "Apple Developer Academy @ Infinite Learning Batam",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      description: "Built three iOS apps in Swift/SwiftUI (Jaka, Emoci, Vocality) as lead developer, and served as UI/UX Designer on three more (Comano, Vocality, Tidy-Up with Miko) — running research, usability testing, and prototyping through to coded UI."
     },
     {
       duration: "4 years",
       period: "Feb 2021 - Dec 2024",
       role: "Full-Stack Developer",
       company: "Dinas Komunikasi dan Informatika Kota Bukittinggi",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      description: "Led the SBH super-app for Bukittinggi's Smart City initiative — managing cross-team task distribution while working hands-on as mobile developer and database manager. Maintained government-wide systems (Attendance, TPP, Pension Management) and trained staff on new platforms."
     },
     {
       duration: "3 Months",
       period: "Oct 2020 - Dec 2020",
       role: "Junior Developer",
       company: "The Big Rich Company Indonesia, South Jakarta",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      description: "Three-month internship building mobile apps with Ionic, plus bug fixes and feature improvements on Laravel-based web applications."
     }
   ];
 

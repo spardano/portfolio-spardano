@@ -83,7 +83,7 @@ export default function Footer() {
             Let's Build Something
           </h2>
           <p className="text-gray-700 text-sm md:text-base font-medium">
-            I'm open to full-stack, backend or frontend developer roles and freelance projects
+            Open to full-stack, backend, and frontend roles, plus freelance projects. Let's build something.
           </p>
         </div>
 
@@ -146,7 +146,7 @@ export default function Footer() {
       {/* Absolute Bottom Signature Bar */}
       <div className="w-full bg-black py-5 text-center mt-12">
         <p className="text-white text-xs tracking-wide font-light">
-          designed and created by <span className='font-bold'>Sakti Pardano</span>
+          <span className='font-bold'>© 2026 Sakti Pardano. All rights reserved.</span> Built with passion in Pekanbaru, Riau.
         </p>
       </div>
 

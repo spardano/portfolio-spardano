@@ -12,27 +12,27 @@ export default function Services() {
     const servicesData: ServiceItem[] = [
         {
             title: "Web Development",
-            description: "I build responsive and dynamic websites using modern web technologies.",
+            description: "I build responsive, production-ready websites and web apps using Laravel, Vue, and modern JS frameworks.",
             icon: "web",
         },
         {
             title: "Mobile App Development",
-            description: "I can do cross-platform (Flutter, Ionic), or native (Swift).",
+            description: "I build cross-platform apps with Flutter and Ionic, or native iOS apps with Swift.",
             icon: "mobile",
         },
         {
             title: "UI Design",
-            description: "I can work around Figma and Framer; in fact, I designed some projects myself.",
+            description: "I design in Figma, from user research and wireframes through high-fidelity prototypes and design systems.",
             icon: "design",
         },
         {
             title: "Deployment & Maintenance",
-            description: "I know how to deploy websites, set up domains and VPS. And I also can publish Play Store and App Store projects.",
+            description: "I handle deployment, domains, plus Play Store and App Store publishing and ongoing maintenance",
             icon: "deployment",
         },
          {
             title: "Project Management",
-            description: "I can manage and lead projects from conception to completion, ensuring timely delivery and quality outcomes.",
+            description: "I've experience on coordinating development team, stakeholders, managing task distribution, and delivering on schedule.",
             icon: "pm",
         },
     ];

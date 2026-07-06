@@ -76,14 +76,14 @@ export default function Credentials() {
               <div className="space-y-1">
                 <h4 className="font-bold text-sm md:text-base text-black">English</h4>
                 <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                  Intermediate, I could speak, read and write in English
+                  Intermediate
                 </p>
               </div>
               
               <div className="space-y-1">
                 <h4 className="font-bold text-sm md:text-base text-black">Indonesia</h4>
                 <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                  Native, Duhh
+                  Native
                 </p>
               </div>
             </div>
