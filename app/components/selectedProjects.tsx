@@ -50,7 +50,7 @@ export default function SelectedProjects() {
     year: 2024,
     institution: "Bukittinggi City Government - Department of Communication and Informatics",
     linkToURL: "https://play.google.com/store/search?q=sistem+bukittinggi+gemilang&c=apps&hl=id",
-    linkToGithub: "https://github.com/spardano/sbg-mobile"
+    linkToGithub: "https://github.com/spardano/sbh_v2"
   },
   {
     title: "Vocality",
@@ -90,7 +90,7 @@ export default function SelectedProjects() {
     myRoleDescriptionID: "Mengembangkan backend Laravel yang mencakup pengelolaan data tiket dan integrasi payment gateway, serta membangun frontend berbasis Vue untuk proses pemesanan dan pelacakan perjalanan.",
     year: 2022,
     institution: "PT Travel Digital",
-    linkToURL: "https://travelgo.example.com",
+    linkToURL: "https://github.com/spardano/web-travelgo",
   },
   {
     title: "Emoci",
@@ -103,6 +103,7 @@ export default function SelectedProjects() {
     myRoleDescriptionID: "Mengimplementasikan alur percakapan yang aman dengan enkripsi lokal untuk data pengguna, serta mengintegrasikan Gemini AI API guna menghasilkan respons dukungan emosional yang relevan dengan konteks percakapan.",
     year: 2024,
     institution: "Startup Kesehatan Mental",
+    linkToGithub: "https://github.com/team7curhat/curhat"
   },
   {
     title: "JasaRekber Mobile",
@@ -115,7 +116,7 @@ export default function SelectedProjects() {
     myRoleDescriptionID: "Mengembangkan frontend menggunakan Ionic dan Angular, termasuk alur status transaksi serta notifikasi real-time berbasis Firebase, dan mengintegrasikan RESTful API untuk proses verifikasi rekening bersama.",
     year: 2022,
     institution: "PT Fintech Nusantara",
-    linkToGithub: "https://github.com/spardano/jasarekber",
+    linkToGithub: "https://github.com/spardano/rekber-hendro",
   },
   {
     title: "Sandiwara News Mobile",
@@ -128,6 +129,7 @@ export default function SelectedProjects() {
     myRoleDescriptionID: "Merancang feed berita adaptif dan logika penyaringan topik, serta membangun sistem rekomendasi berbasis Core ML untuk menampilkan artikel yang sesuai dengan pola baca pengguna.",
     year: 2023,
     institution: "Media Digital Lokal",
+    linkToGithub: "https://github.com/spardano/sandiwara-mobile"
   },
   {
     title: "Perpustakaan Digital",
@@ -140,7 +142,8 @@ export default function SelectedProjects() {
     myRoleDescriptionID: "Memimpin pengembangan sistem katalog dan autentikasi pengguna, serta membangun mesin rekomendasi buku berdasarkan preferensi pengguna.",
     year: 2024,
     institution: "Perpustakaan Kota Bukittinggi",
-    linkToURL: "https://perpusdigital.example.com",
+    linkToURL: "https://pusdigi.bukittinggikota.go.id",
+    linkToGithub: "https://github.com/ridho15/perpustakaan_digital"
   },
   {
     title: "TPP Bukittinggi",
@@ -153,6 +156,7 @@ export default function SelectedProjects() {
     myRoleDescriptionID: "Merancang logika perhitungan insentif, mengintegrasikan alur data absensi, dan membangun tampilan laporan yang dapat diakses langsung oleh pegawai.",
     year: 2024,
     institution: "Pemerintah Kota Bukittinggi",
+    linkToURL: "https://tpp.bukittinggikota.go.id",
   }
 ];
 
