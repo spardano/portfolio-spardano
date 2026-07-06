@@ -6,6 +6,7 @@ export default function Header() {
     const { lang, setLang, t } = useLanguage();
 
     return (
+        
         <header className="w-full bg-white/70 backdrop-blur-md py-6 fixed top-0 left-0 right-0 z-50 border-b border-gray-100">
             <div className="max-w-7xl mx-auto px-8 md:px-16 flex items-center justify-between">
                 {/* Brand name on the left side */}
