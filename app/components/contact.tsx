@@ -1,7 +1,9 @@
 'use client';
 import React, {useState} from 'react';
+import { useLanguage } from '../src/context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
 
   const [copied, setCopied] = useState(false);
   const emailAddress = "sakti.pardano29@gmail.com";
@@ -80,17 +82,17 @@ export default function Footer() {
         {/* Core Headline */}
         <div className="space-y-3">
           <h2 className="text-3xl md:text-4xl font-black text-black tracking-tight">
-            Let's Build Something
+            {(t("Let's Build Something", "Ayo Bekerja Sama"))}
           </h2>
           <p className="text-gray-700 text-sm md:text-base font-medium">
-            Open to full-stack, backend, and frontend roles, plus freelance projects. Let's build something.
+            {(t("Open to full-stack, backend, and frontend roles. Let's build something.", "Terbuka untuk peran full-stack, backend, dan frontend."))}
           </p>
         </div>
 
         {/* Email Contact Box */}
         <div className="space-y-3">
           <p className="text-gray-600 text-xs md:text-sm font-medium">
-            contact me through email or these links
+            {(t("contact me through email or these links", "hubungi saya melalui email atau tautan link dibawah"))}
           </p>
           <div className="flex flex-col items-center justify-center space-y-2">
             <button
@@ -119,7 +121,7 @@ export default function Footer() {
              {/* Smooth fading confirmation message below the button */}
               <div className="h-5">
                 <span className={`text-xs text-green-600 font-semibold transition-opacity duration-300 ${copied ? 'opacity-100' : 'opacity-0'}`}>
-                  Email copied to clipboard!
+                  {(t("Email copied to clipboard!", "Email disalin ke clipboard!"))}
                 </span>
               </div>
           </div>

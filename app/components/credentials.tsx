@@ -1,6 +1,9 @@
+'use client';
 import React from 'react';
+import { useLanguage } from '../src/context/LanguageContext';
 
 export default function Credentials() {
+  const { t } = useLanguage();
   // Array data for the certifications list to keep code clean
   const certifications = [
     { title: "Project Management Proffesional", provider: "Google Coursera | 2025" },
@@ -16,7 +19,7 @@ export default function Credentials() {
         
         {/* Section Heading */}
         <h2 className="text-3xl font-black text-black tracking-tight">
-          Credentials
+          {t("Credentials", "Kredensial")}
         </h2>
 
         {/* Responsive 3-Column Grid Layout */}
@@ -25,7 +28,7 @@ export default function Credentials() {
           {/* Column 1: Education */}
           <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6 transition-transform hover:-translate-y-1 duration-200">
             <h3 className="text-xl font-bold text-black tracking-tight">
-              Education
+              {t("Education", "Pendidikan")}
             </h3>
             
             <div className="space-y-4">
@@ -50,7 +53,7 @@ export default function Credentials() {
           {/* Column 2: Certification and Training */}
           <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6 transition-transform hover:-translate-y-1 duration-200">
             <h3 className="text-xl font-bold text-black tracking-tight">
-              Certification and Training
+              {t("Certification and Training", "Sertifikasi dan Pelatihan")}
             </h3>
             
             {/* Dynamic list loop */}
@@ -69,7 +72,7 @@ export default function Credentials() {
           {/* Column 3: Language */}
           <div className="bg-[#F3F4F6] rounded-[24px] p-8 flex flex-col space-y-6 transition-transform hover:-translate-y-1 duration-200">
             <h3 className="text-xl font-bold text-black tracking-tight">
-              Language
+              {t("Language", "Bahasa")}
             </h3>
             
             <div className="space-y-4">

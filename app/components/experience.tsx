@@ -1,37 +1,50 @@
+'use client';
 import React from 'react';
+import { useLanguage } from '../src/context/LanguageContext';
 
 // 1. Structure template for each work history item
 interface ExperienceItem {
   duration: string;
+  durationID?: string;
   period: string;
   role: string;
   company: string;
   description: string;
+  descriptionID?: string; 
 }
 
 export default function Experience() {
+
+  const { t } = useLanguage();
+
   // 2. Your experience loop data array
   const experienceData: ExperienceItem[] = [
     {
       duration: "10 Months",
+      durationID: "10 Bulan",
       period: "Mar 2025 - Dec 2025",
       role: "iOS Developer",
       company: "Apple Developer Academy @ Infinite Learning Batam",
-      description: "Built three iOS apps in Swift/SwiftUI (Jaka, Emoci, Vocality) as lead developer, and served as UI/UX Designer on three more (Comano, Vocality, Tidy-Up with Miko) — running research, usability testing, and prototyping through to coded UI."
+      description: "Built three iOS apps in Swift/SwiftUI (Jaka, Emoci, Vocality) as lead developer, and served as UI/UX Designer on three more (Comano, Vocality, Tidy-Up with Miko) — running research, usability testing, and prototyping through to coded UI.",
+      descriptionID: "Membangun tiga aplikasi iOS menggunakan Swift/SwiftUI (Jaka, Emoci, Vocality) sebagai lead developer, serta berperan sebagai UI/UX Designer pada tiga proyek lainnya (Comano, Vocality, Tidy-Up with Miko) — mulai dari riset, usability testing, hingga prototyping sampai ke coded UI."
     },
     {
       duration: "4 years",
+      durationID: "4 Tahun",
       period: "Feb 2021 - Dec 2024",
       role: "Full-Stack Developer",
       company: "Dinas Komunikasi dan Informatika Kota Bukittinggi",
-      description: "Led the SBH super-app for Bukittinggi's Smart City initiative — managing cross-team task distribution while working hands-on as mobile developer and database manager. Maintained government-wide systems (Attendance, TPP, Pension Management) and trained staff on new platforms."
+      description: "Led the SBH super-app for Bukittinggi's Smart City initiative — managing cross-team task distribution while working hands-on as mobile developer and database manager. Maintained government-wide systems (Attendance, TPP, Pension Management) and trained staff on new platforms.",
+      descriptionID: "Memimpin pengembangan super-app SBH untuk Smart City Bukittinggi, mengatur task distribution lintas tim sambil berperan langsung sebagai mobile developer dan database manager. Menangani maintenance sistem pemerintahan (Attendance, TPP, Pension Management) serta melatih staf pengguna platform baru."
     },
     {
       duration: "3 Months",
+      durationID: "3 Bulan",
       period: "Oct 2020 - Dec 2020",
       role: "Junior Developer",
       company: "The Big Rich Company Indonesia, South Jakarta",
-      description: "Three-month internship building mobile apps with Ionic, plus bug fixes and feature improvements on Laravel-based web applications."
+      description: "Three-month internship building mobile apps with Ionic, plus bug fixes and feature improvements on Laravel-based web applications.",
+      descriptionID: "Magang selama tiga bulan dalam pembuatan aplikasi mobile dengan Ionic, ditambah perbaikan bug dan peningkatan fitur pada aplikasi web berbasis Laravel."
     }
   ];
 
@@ -41,7 +54,7 @@ export default function Experience() {
         
         {/* Section Heading */}
         <h2 className="text-3xl font-black text-black mb-12 tracking-tight">
-          Experience
+          {t("Experience", "Pengalaman")}
         </h2>
 
         {/* Experience Rows Container */}
@@ -56,7 +69,7 @@ export default function Experience() {
               {/* Column 1: Duration & Dates */}
               <div className="md:col-span-3 space-y-1">
                 <h3 className="text-2xl font-black text-black tracking-tight">
-                  {exp.duration}
+                  {t(exp.duration, exp.durationID ? exp.durationID : exp.duration)}
                 </h3>
                 <p className="text-sm md:text-sm text-gray-500 font-medium">
                   {exp.period}
@@ -76,7 +89,7 @@ export default function Experience() {
               {/* Column 3: Job Description Text */}
               <div className="md:col-span-5">
                 <p className="text-black text-sm md:text-base leading-relaxed text-justify md:text-left">
-                  {exp.description}
+                  {t(exp.description, exp.descriptionID ? exp.descriptionID : exp.description)}
                 </p>
               </div>
 

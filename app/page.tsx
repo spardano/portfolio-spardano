@@ -7,11 +7,13 @@ import Experience from "./components/experience";
 import Credentials from "./components/credentials";
 import Contact from "./components/contact";
 import SelectedProjects from "./components/selectedProjects";
+import { LanguageProvider } from "./src/context/LanguageContext";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-white overflow-visible">
-      <Headers />
+    <LanguageProvider>
+      <div className="relative min-h-screen bg-white overflow-visible">
+        <Headers />
       <main className="w-full overflow-visible">
         <Hero />
         <Services />
@@ -21,6 +23,7 @@ export default function Home() {
         <SelectedProjects />
         <Contact />
       </main>
-    </div>
+     </div>
+    </LanguageProvider>
   );
 }

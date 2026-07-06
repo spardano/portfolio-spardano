@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { useLanguage } from '../src/context/LanguageContext';
 import Image, { StaticImageData } from 'next/image';
 import sbhImage from '../../public/selectedProjects/sbh.png';
 import vocalityImage from '../../public/selectedProjects/vocality.png';
@@ -11,12 +12,17 @@ import sandiwaraImage from '../../public/selectedProjects/sandiwara.png';
 import pusdigiImage from '../../public/selectedProjects/pusdigi.png';
 import tppImage from '../../public/selectedProjects/tpp.png';
 
+
+
 interface Project {
   title: string;
   description: string;
+  descriptionID?: string;
   longDescription: string;
+  longDescriptionID?: string;
   tags: string[];
   myRoleDescription: string;
+  myRoleDescriptionID?: string;
   teams?: string[];
   year: number;
   institution: string;
@@ -26,100 +32,129 @@ interface Project {
 
 export default function SelectedProjects() {
 
+  const { t } = useLanguage();
+
   // State to track which project is active in the modal
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   const projectData: Project[] = [
-    {
-      title: "SBG Mobile",
-      description: "Super-app unifying multiple public administration services into a single platform, built for Bukittinggi's Smart City initiative.",
-      longDescription: "SBG (Sistem Bukittinggi Gemilang) is a Smart City initiative that consolidates multiple public services into one mobile app. It serves three user types with distinct feature sets: visitors get access to tourism and shopping information across Bukittinggi; residents can handle civil administration, social assistance distribution, and permit applications; and government employees get attendance tracking, e-office access, and performance monitoring. All features integrate with public and internal city government APIs, built on Flutter, Laravel, and Vue for a scalable mobile and web experience.",
-      tags: ["Flutter", "Geolocation", "API", "Push Notification"],
-      myRoleDescription: "Architected the mobile app structure in Flutter, integrated public and internal government APIs, and implemented geolocation, push notifications, and state management. Built offline-first support for the attendance and tourism modules to handle low-connectivity conditions.",
-      year: 2024,
-      institution: "Bukittinggi City Government - Department of Communication and Informatics",
-      linkToURL: "https://play.google.com/store/search?q=sistem+bukittinggi+gemilang&c=apps&hl=id",
-      linkToGithub: "https://github.com/spardano/sbg-mobile"
-    },
-    {
-      title: "Vocality",
-      description: "Vocal training app using Core ML to evaluate and coach users' singing and speaking technique in real time.",
-      longDescription: "Vocality helps users improve vocal quality using a machine learning model that analyzes pitch, timing, and intonation in real time.",
-      tags: ["iOS", "Swift", "Core ML", "Apple Intelligence"],
-      myRoleDescription: "Built the vocal evaluation engine, integrated the Core ML model for real-time pitch and timing analysis, and developed the interactive practice UI for guided vocal exercises.",
-      year: 2025,
-      institution: "Apple Developer Academy @ Infinite Learning Batam",
-      linkToGithub: "https://github.com/stpimm/Vocality",
-    },
-    {
-      title: "Comano",
-      description: "iPad app that helps users train public speaking skills through guided verbal practice and feedback.",
-      longDescription: "Comano is an educational iPad app that supports public speaking practice with audio, text, and visual feedback to help users refine pronunciation and delivery.",
-      tags: ["iPad", "Swift",  "Core Data", "Sound Analysis"],
-      myRoleDescription: "Built the audio-video recording module, implemented movement and gesture analysis using Sound Analysis, and developed the instant feedback rendering system with Core Data for local storage.",
-      year: 2025,
-      institution: "Apple Developer Academy @ Infinite Learning Batam",
-      linkToURL: "https://apps.apple.com/id/app/comano-public-speaking-coach/id6747808692?l=id",
-      linkToGithub: "https://github.com/SOLID-Comano/ComanoFinal"
-    },
-    {
-      title: "TravelGO Web",
-      description: "Inter-province transport ticketing platform with integrated payment gateway and geolocation, built in Laravel and Vue.",
-      longDescription: "TravelGO Web lets users book inter-city transport tickets with price comparison, departure tracking, and integrated payment processing in a single platform.",
-      tags: ["Payment Gateway", "Laravel", "Filament", "Vue"],
-      myRoleDescription: "Built the Laravel backend including ticket data management and payment gateway integration, and developed the Vue-based frontend for booking and tracking flows.",
-      year: 2022,
-      institution: "PT Travel Digital",
-      linkToURL: "https://travelgo.example.com",
-    },
-    {
-      title: "Emoci",
-      description: "A private, AI-powered journaling companion integrated with Gemini AI — a safe space to process emotions.",
-      longDescription: "Emoci is a private AI conversation platform that helps users express emotions, save reflection drafts, and keep their data secure.",
-      tags: ["Swift", "iOS", "AI"],
-      myRoleDescription: "Implemented the secure chat flow with local encryption for user data, and integrated the Gemini AI API to generate context-aware emotional support responses.",
-      year: 2024,
-      institution: "Startup Kesehatan Mental",
-    },
-    {
-      title: "JasaRekber Mobile",
-      description: "Escrow app that gives buyers and sellers a secure, mediated space to complete online transactions.",
-      longDescription: "JasaRekber Mobile provides a shared escrow account for buy-sell transactions, with third-party verification and transparent transaction tracking.",
-      tags: ["Ionic", "Angular", "Restful-API", "Firebase"],
-      myRoleDescription: "Built the frontend in Ionic/Angular, including transaction status flows and real-time notifications powered by Firebase, and integrated the RESTful API for escrow verification.",
-      year: 2022,
-      institution: "PT Fintech Nusantara",
-      linkToGithub: "https://github.com/spardano/jasarekber",
-    },
-    {
-      title: "Sandiwara News Mobile",
-      description: "News app pulling from public APIs to deliver up-to-date headlines in a clean mobile reading experience.",
-      longDescription: "Sandiwara News Mobile aggregates daily news summaries from multiple sources, with bookmarking and topic-based notifications.",
-      tags: ["Swift", "iOS", "Core ML"],
-      myRoleDescription: "Designed the adaptive news feed and topic filtering logic, and built a Core ML-based recommendation system to surface articles matching user reading patterns.",
-      year: 2023,
-      institution: "Media Digital Lokal",
-    },
-    {
-      title: "Perpustakaan Digital",
-      description: "E-book lending app for Bukittinggi's city library, letting residents borrow digital collections remotely.",
-      longDescription: "Perpustakaan Digital provides an e-book catalog with borrowing and return tracking through a user-friendly mobile interface.",
-      tags: ["Swift", "iOS", "AI"],
-      myRoleDescription: "Led development of the catalog system and user authentication, and built a preference-based book recommendation engine.",
-      year: 2024,
-      institution: "Perpustakaan Kota Bukittinggi",
-      linkToURL: "https://perpusdigital.example.com",
-    },
-    {
-      title: "TPP Bukittinggi",
-      description: "Employee incentive (TPP) calculation app integrated with attendance data for accurate, automated payouts.",
-      longDescription: "TPP Bukittinggi automatically calculates employee incentives based on attendance and performance data, with transparent reporting.",
-      tags: ["Swift", "iOS", "AI"],
-      myRoleDescription: "Designed the incentive calculation logic, integrated attendance data pipelines, and built the employee-facing reporting views.",
-      year: 2024,
-      institution: "Pemerintah Kota Bukittinggi",
-    }
-  ];
+  {
+    title: "SBG Mobile",
+    description: "Super-app unifying multiple public administration services into a single platform, built for Bukittinggi's Smart City initiative.",
+    descriptionID: "Super-app yang menyatukan berbagai layanan administrasi publik dalam satu platform terintegrasi untuk mendukung inisiatif Smart City Kota Bukittinggi.",
+    longDescription: "SBG (Sistem Bukittinggi Gemilang) is a Smart City initiative that consolidates multiple public services into one mobile app. It serves three user types with distinct feature sets: visitors get access to tourism and shopping information across Bukittinggi; residents can handle civil administration, social assistance distribution, and permit applications; and government employees get attendance tracking, e-office access, and performance monitoring. All features integrate with public and internal city government APIs, built on Flutter, Laravel, and Vue for a scalable mobile and web experience.",
+    longDescriptionID: "SBG (Sistem Bukittinggi Gemilang) merupakan inisiatif Smart City yang mengintegrasikan berbagai layanan publik ke dalam satu aplikasi mobile. Aplikasi ini melayani tiga jenis pengguna dengan fitur yang berbeda: wisatawan dapat mengakses informasi pariwisata dan pusat perbelanjaan di Kota Bukittinggi; masyarakat dapat mengurus administrasi kependudukan, bantuan sosial, serta perizinan; sementara pegawai pemerintah dapat mengakses absensi, e-office, dan pemantauan kinerja. Seluruh fitur terhubung dengan API publik maupun internal pemerintah kota dan dibangun menggunakan Flutter, Laravel, serta Vue untuk menghadirkan pengalaman mobile dan web yang skalabel.",
+    tags: ["Flutter", "Geolocation", "API", "Push Notification"],
+    myRoleDescription: "Architected the mobile app structure in Flutter, integrated public and internal government APIs, and implemented geolocation, push notifications, and state management. Built offline-first support for the attendance and tourism modules to handle low-connectivity conditions.",
+    myRoleDescriptionID: "Merancang arsitektur aplikasi mobile menggunakan Flutter, mengintegrasikan API publik dan internal pemerintah, serta mengimplementasikan fitur geolokasi, push notification, dan manajemen state. Juga mengembangkan dukungan offline-first pada modul absensi dan pariwisata untuk memastikan aplikasi tetap dapat digunakan di area dengan koneksi internet terbatas.",
+    year: 2024,
+    institution: "Bukittinggi City Government - Department of Communication and Informatics",
+    linkToURL: "https://play.google.com/store/search?q=sistem+bukittinggi+gemilang&c=apps&hl=id",
+    linkToGithub: "https://github.com/spardano/sbg-mobile"
+  },
+  {
+    title: "Vocality",
+    description: "Vocal training app using Core ML to evaluate and coach users' singing and speaking technique in real time.",
+    descriptionID: "Aplikasi pelatihan vokal yang memanfaatkan Core ML untuk mengevaluasi dan membimbing teknik bernyanyi maupun berbicara pengguna secara real-time.",
+    longDescription: "Vocality helps users improve vocal quality using a machine learning model that analyzes pitch, timing, and intonation in real time.",
+    longDescriptionID: "Vocality membantu pengguna meningkatkan kualitas vokal melalui model machine learning yang mampu menganalisis pitch, timing, dan intonasi secara real-time.",
+    tags: ["iOS", "Swift", "Core ML", "Apple Intelligence"],
+    myRoleDescription: "Built the vocal evaluation engine, integrated the Core ML model for real-time pitch and timing analysis, and developed the interactive practice UI for guided vocal exercises.",
+    myRoleDescriptionID: "Mengembangkan mesin evaluasi vokal, mengintegrasikan model Core ML untuk analisis pitch dan timing secara real-time, serta membangun antarmuka latihan interaktif yang memandu pengguna dalam meningkatkan kemampuan vokalnya.",
+    year: 2025,
+    institution: "Apple Developer Academy @ Infinite Learning Batam",
+    linkToGithub: "https://github.com/stpimm/Vocality",
+  },
+  {
+    title: "Comano",
+    description: "iPad app that helps users train public speaking skills through guided verbal practice and feedback.",
+    descriptionID: "Aplikasi iPad yang membantu pengguna melatih kemampuan public speaking melalui latihan berbicara terarah dan umpan balik langsung.",
+    longDescription: "Comano is an educational iPad app that supports public speaking practice with audio, text, and visual feedback to help users refine pronunciation and delivery.",
+    longDescriptionID: "Comano adalah aplikasi edukasi untuk iPad yang mendukung latihan public speaking dengan umpan balik berupa audio, teks, dan visual guna membantu pengguna meningkatkan pelafalan dan penyampaian materi.",
+    tags: ["iPad", "Swift", "Core Data", "Sound Analysis"],
+    myRoleDescription: "Built the audio-video recording module, implemented movement and gesture analysis using Sound Analysis, and developed the instant feedback rendering system with Core Data for local storage.",
+    myRoleDescriptionID: "Mengembangkan modul perekaman audio dan video, mengimplementasikan analisis gerakan serta gestur menggunakan Sound Analysis, dan membangun sistem umpan balik instan dengan Core Data untuk penyimpanan lokal.",
+    year: 2025,
+    institution: "Apple Developer Academy @ Infinite Learning Batam",
+    linkToURL: "https://apps.apple.com/id/app/comano-public-speaking-coach/id6747808692?l=id",
+    linkToGithub: "https://github.com/SOLID-Comano/ComanoFinal"
+  },
+  {
+    title: "TravelGO Web",
+    description: "Inter-province transport ticketing platform with integrated payment gateway and geolocation, built in Laravel and Vue.",
+    descriptionID: "Platform pemesanan tiket transportasi antarprovinsi dengan integrasi payment gateway dan geolokasi yang dibangun menggunakan Laravel dan Vue.",
+    longDescription: "TravelGO Web lets users book inter-city transport tickets with price comparison, departure tracking, and integrated payment processing in a single platform.",
+    longDescriptionID: "TravelGO Web memungkinkan pengguna memesan tiket transportasi antarkota dengan fitur perbandingan harga, pelacakan keberangkatan, dan pembayaran terintegrasi dalam satu platform.",
+    tags: ["Payment Gateway", "Laravel", "Filament", "Vue"],
+    myRoleDescription: "Built the Laravel backend including ticket data management and payment gateway integration, and developed the Vue-based frontend for booking and tracking flows.",
+    myRoleDescriptionID: "Mengembangkan backend Laravel yang mencakup pengelolaan data tiket dan integrasi payment gateway, serta membangun frontend berbasis Vue untuk proses pemesanan dan pelacakan perjalanan.",
+    year: 2022,
+    institution: "PT Travel Digital",
+    linkToURL: "https://travelgo.example.com",
+  },
+  {
+    title: "Emoci",
+    description: "A private, AI-powered journaling companion integrated with Gemini AI — a safe space to process emotions.",
+    descriptionID: "Aplikasi jurnal pribadi berbasis AI yang terintegrasi dengan Gemini AI untuk membantu pengguna memahami dan mengekspresikan emosinya dengan aman.",
+    longDescription: "Emoci is a private AI conversation platform that helps users express emotions, save reflection drafts, and keep their data secure.",
+    longDescriptionID: "Emoci merupakan platform percakapan berbasis AI yang membantu pengguna mengekspresikan emosi, menyimpan refleksi pribadi, dan menjaga keamanan data mereka.",
+    tags: ["Swift", "iOS", "AI"],
+    myRoleDescription: "Implemented the secure chat flow with local encryption for user data, and integrated the Gemini AI API to generate context-aware emotional support responses.",
+    myRoleDescriptionID: "Mengimplementasikan alur percakapan yang aman dengan enkripsi lokal untuk data pengguna, serta mengintegrasikan Gemini AI API guna menghasilkan respons dukungan emosional yang relevan dengan konteks percakapan.",
+    year: 2024,
+    institution: "Startup Kesehatan Mental",
+  },
+  {
+    title: "JasaRekber Mobile",
+    description: "Escrow app that gives buyers and sellers a secure, mediated space to complete online transactions.",
+    descriptionID: "Aplikasi rekening bersama yang menyediakan ruang transaksi online yang aman bagi pembeli dan penjual melalui pihak ketiga terpercaya.",
+    longDescription: "JasaRekber Mobile provides a shared escrow account for buy-sell transactions, with third-party verification and transparent transaction tracking.",
+    longDescriptionID: "JasaRekber Mobile menyediakan layanan rekening bersama untuk transaksi jual beli dengan verifikasi pihak ketiga dan pelacakan transaksi yang transparan.",
+    tags: ["Ionic", "Angular", "Restful-API", "Firebase"],
+    myRoleDescription: "Built the frontend in Ionic/Angular, including transaction status flows and real-time notifications powered by Firebase, and integrated the RESTful API for escrow verification.",
+    myRoleDescriptionID: "Mengembangkan frontend menggunakan Ionic dan Angular, termasuk alur status transaksi serta notifikasi real-time berbasis Firebase, dan mengintegrasikan RESTful API untuk proses verifikasi rekening bersama.",
+    year: 2022,
+    institution: "PT Fintech Nusantara",
+    linkToGithub: "https://github.com/spardano/jasarekber",
+  },
+  {
+    title: "Sandiwara News Mobile",
+    description: "News app pulling from public APIs to deliver up-to-date headlines in a clean mobile reading experience.",
+    descriptionID: "Aplikasi berita yang memanfaatkan API publik untuk menyajikan headline terkini dengan pengalaman membaca yang nyaman di perangkat mobile.",
+    longDescription: "Sandiwara News Mobile aggregates daily news summaries from multiple sources, with bookmarking and topic-based notifications.",
+    longDescriptionID: "Sandiwara News Mobile mengumpulkan ringkasan berita harian dari berbagai sumber serta menyediakan fitur bookmark dan notifikasi berdasarkan topik yang diminati pengguna.",
+    tags: ["Swift", "iOS", "Core ML"],
+    myRoleDescription: "Designed the adaptive news feed and topic filtering logic, and built a Core ML-based recommendation system to surface articles matching user reading patterns.",
+    myRoleDescriptionID: "Merancang feed berita adaptif dan logika penyaringan topik, serta membangun sistem rekomendasi berbasis Core ML untuk menampilkan artikel yang sesuai dengan pola baca pengguna.",
+    year: 2023,
+    institution: "Media Digital Lokal",
+  },
+  {
+    title: "Perpustakaan Digital",
+    description: "E-book lending app for Bukittinggi's city library, letting residents borrow digital collections remotely.",
+    descriptionID: "Aplikasi peminjaman e-book milik Perpustakaan Kota Bukittinggi yang memungkinkan masyarakat mengakses koleksi digital secara jarak jauh.",
+    longDescription: "Perpustakaan Digital provides an e-book catalog with borrowing and return tracking through a user-friendly mobile interface.",
+    longDescriptionID: "Perpustakaan Digital menyediakan katalog e-book lengkap dengan fitur peminjaman dan pelacakan pengembalian melalui antarmuka mobile yang mudah digunakan.",
+    tags: ["Swift", "iOS", "AI"],
+    myRoleDescription: "Led development of the catalog system and user authentication, and built a preference-based book recommendation engine.",
+    myRoleDescriptionID: "Memimpin pengembangan sistem katalog dan autentikasi pengguna, serta membangun mesin rekomendasi buku berdasarkan preferensi pengguna.",
+    year: 2024,
+    institution: "Perpustakaan Kota Bukittinggi",
+    linkToURL: "https://perpusdigital.example.com",
+  },
+  {
+    title: "TPP Bukittinggi",
+    description: "Employee incentive (TPP) calculation app integrated with attendance data for accurate, automated payouts.",
+    descriptionID: "Aplikasi perhitungan Tambahan Penghasilan Pegawai (TPP) yang terintegrasi dengan data absensi untuk menghasilkan perhitungan insentif yang akurat dan otomatis.",
+    longDescription: "TPP Bukittinggi automatically calculates employee incentives based on attendance and performance data, with transparent reporting.",
+    longDescriptionID: "TPP Bukittinggi secara otomatis menghitung insentif pegawai berdasarkan data kehadiran dan kinerja, serta menyediakan laporan yang transparan dan mudah dipahami.",
+    tags: ["Swift", "iOS", "AI"],
+    myRoleDescription: "Designed the incentive calculation logic, integrated attendance data pipelines, and built the employee-facing reporting views.",
+    myRoleDescriptionID: "Merancang logika perhitungan insentif, mengintegrasikan alur data absensi, dan membangun tampilan laporan yang dapat diakses langsung oleh pegawai.",
+    year: 2024,
+    institution: "Pemerintah Kota Bukittinggi",
+  }
+];
 
   const imageMap: { [key: string]: StaticImageData } = {
     "SBG Mobile": sbhImage,
@@ -139,7 +174,7 @@ export default function SelectedProjects() {
         
         {/* Section Heading */}
         <h2 className="text-3xl font-black text-black tracking-tight">
-          Selected Projects
+          {(t("Selected Projects", "Proyek Aplikasi Pilihan"))}
         </h2>
 
         {/* Responsive Grid Matrix */}
@@ -184,7 +219,7 @@ export default function SelectedProjects() {
                   
                   {/* Fixed 2-Line Clamped Description */}
                   <p className="text-gray-300 text-xs md:text-sm leading-relaxed line-clamp-2 font-normal">
-                    {project.description}
+                    {t(project.description, project.descriptionID || project.description)}
                   </p>
                 </div>
                 
@@ -264,36 +299,20 @@ export default function SelectedProjects() {
 
 
               <div className="space-y-3 text-gray-700 text-sm md:text-base leading-relaxed">
-                <h4 className="text-base font-semibold text-black">Peran saya</h4>
-                <p>{activeProject.myRoleDescription}</p>
+                <h4 className="text-base font-semibold text-black">My Role</h4>
+                <p>{t(activeProject.myRoleDescription, activeProject.myRoleDescriptionID || activeProject.myRoleDescription)}</p>
               </div>
              
 
               <hr className="border-gray-200" />
 
               <div className="text-gray-700 text-sm md:text-base leading-relaxed text-justify space-y-4">
-                <h4 className="text-base font-semibold text-black">Ringkasan</h4>
-                <p>{activeProject.longDescription}</p>
-                <p>{activeProject.description}</p>
+                <h4 className="text-base font-semibold text-black">Summary</h4>
+                <p>{t(activeProject.longDescription, activeProject.longDescriptionID || activeProject.longDescription)}</p>
+                <p>{t(activeProject.description, activeProject.descriptionID || activeProject.description)}</p>
               </div>
 
               <hr className="border-gray-200" />
-
-              {activeProject.teams?.length ? (
-                  <div className="space-y-3 text-gray-700 text-sm md:text-base leading-relaxed">
-                    <h4 className="text-base font-semibold text-black">Tim</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {activeProject.teams.map((team, teamIdx) => (
-                        <span
-                          key={teamIdx}
-                          className="bg-black text-white rounded-full px-3 py-1 text-xs font-semibold"
-                        >
-                          {team}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
 
               {(activeProject.linkToGithub || activeProject.linkToURL) && (
                 <div className="flex flex-row gap-3">

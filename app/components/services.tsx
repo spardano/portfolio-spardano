@@ -1,38 +1,53 @@
+'use client';
 import React from "react";
+import { useLanguage } from "../src/context/LanguageContext";
 
 // typescript structure for service item
 interface ServiceItem {
     title: string;
+    titleID?: string;
     description: string;
+    descriptionID?: string;
     icon: string;
 }
 
 export default function Services() {
+    const { t } = useLanguage();
     // json data
     const servicesData: ServiceItem[] = [
         {
             title: "Web Development",
+            titleID: "Pengembangan Web",
             description: "I build responsive, production-ready websites and web apps using Laravel, Vue, and modern JS frameworks.",
+            descriptionID: "Saya membangun website dan web apps yang responsif dan siap produksi menggunakan Laravel, Vue, dan framework JS modern.",
             icon: "web",
         },
         {
             title: "Mobile App Development",
+            titleID: "Pengembangan Aplikasi Mobile",
             description: "I build cross-platform apps with Flutter and Ionic, or native iOS apps with Swift.",
+            descriptionID: "Saya membangun aplikasi lintas platform dengan Flutter dan Ionic, atau aplikasi iOS dengan Swift.",
             icon: "mobile",
         },
         {
             title: "UI Design",
+            titleID: "Desain UI",
             description: "I design in Figma, from user research and wireframes through high-fidelity prototypes and design systems.",
+            descriptionID: "Saya mendesain menggunakan Figma, mulai dari user research dan wireframe hingga high-fidelity prototype dan design system.",
             icon: "design",
         },
         {
             title: "Deployment & Maintenance",
+            titleID: "Deployment & Pemeliharaan",
             description: "I handle deployment, domains, plus Play Store and App Store publishing and ongoing maintenance",
+            descriptionID: "Saya menangani proses deployment, pengaturan domain, hingga publikasi aplikasi ke Play Store dan App Store, serta maintenance secara berkelanjutan.",
             icon: "deployment",
         },
          {
             title: "Project Management",
+            titleID: "Manajemen Projek",
             description: "I've experience on coordinating development team, stakeholders, managing task distribution, and delivering on schedule.",
+            descriptionID: "Saya berpengalaman mengoordinasikan tim development, berkomunikasi dengan stakeholder, mengatur pembagian tugas, dan memastikan proyek selesai tepat waktu.",
             icon: "pm",
         },
     ];
@@ -81,7 +96,7 @@ export default function Services() {
 
                 {/* Section Heading */}
                 <h2 className="text-3xl font-black text-black mb-10 tracking-tight">
-                    Services I Offer
+                    {t("Services I Offer", "Layanan yang ditawarkan")}
                 </h2>
 
                 {/* Services Grid */}
@@ -97,10 +112,10 @@ export default function Services() {
 
                             <div className="space-y-2">
                                 <h3 className="font-bold text-xl text-black tracking-tight">
-                                {service.title}
+                                {t(service.title, service.titleID ? service.titleID : service.title)}
                                 </h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                {service.description}
+                                {t(service.description, service.descriptionID ? service.descriptionID : service.description)}
                                 </p>
                             </div>
 
