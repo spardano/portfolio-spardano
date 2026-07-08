@@ -49,8 +49,8 @@ export default function SelectedProjects() {
     myRoleDescriptionID: "Merancang arsitektur aplikasi mobile menggunakan Flutter, mengintegrasikan API publik dan internal pemerintah, serta mengimplementasikan fitur geolokasi, push notification, dan manajemen state. Juga mengembangkan dukungan offline-first pada modul absensi dan pariwisata untuk memastikan aplikasi tetap dapat digunakan di area dengan koneksi internet terbatas.",
     year: 2024,
     institution: "Bukittinggi City Government - Department of Communication and Informatics",
-    linkToURL: "https://play.google.com/store/search?q=sistem+bukittinggi+gemilang&c=apps&hl=id",
-    linkToGithub: "https://github.com/spardano/sbh_v2"
+    linkToURL: "https://play.google.com/store/search?q=sistem+bukittinggi+gemilang&c=apps&hl=id"
+    // linkToGithub: "https://github.com/spardano/sbh_v2"
   },
   {
     title: "Vocality",
@@ -90,7 +90,7 @@ export default function SelectedProjects() {
     myRoleDescriptionID: "Mengembangkan backend Laravel yang mencakup pengelolaan data tiket dan integrasi payment gateway, serta membangun frontend berbasis Vue untuk proses pemesanan dan pelacakan perjalanan.",
     year: 2022,
     institution: "PT Travel Digital",
-    linkToURL: "https://github.com/spardano/web-travelgo",
+    linkToGithub: "https://github.com/spardano/web-travelgo",
   },
   {
     title: "Emoci",
@@ -98,7 +98,7 @@ export default function SelectedProjects() {
     descriptionID: "Aplikasi jurnal pribadi berbasis AI yang terintegrasi dengan Gemini AI untuk membantu pengguna memahami dan mengekspresikan emosinya dengan aman.",
     longDescription: "Emoci is a private AI conversation platform that helps users express emotions, save reflection drafts, and keep their data secure.",
     longDescriptionID: "Emoci merupakan platform percakapan berbasis AI yang membantu pengguna mengekspresikan emosi, menyimpan refleksi pribadi, dan menjaga keamanan data mereka.",
-    tags: ["Swift", "iOS", "AI"],
+    tags: ["Swift", "iOS", "AI Gemini"],
     myRoleDescription: "Implemented the secure chat flow with local encryption for user data, and integrated the Gemini AI API to generate context-aware emotional support responses.",
     myRoleDescriptionID: "Mengimplementasikan alur percakapan yang aman dengan enkripsi lokal untuk data pengguna, serta mengintegrasikan Gemini AI API guna menghasilkan respons dukungan emosional yang relevan dengan konteks percakapan.",
     year: 2024,
@@ -111,7 +111,7 @@ export default function SelectedProjects() {
     descriptionID: "Aplikasi rekening bersama yang menyediakan ruang transaksi online yang aman bagi pembeli dan penjual melalui pihak ketiga terpercaya.",
     longDescription: "JasaRekber Mobile provides a shared escrow account for buy-sell transactions, with third-party verification and transparent transaction tracking.",
     longDescriptionID: "JasaRekber Mobile menyediakan layanan rekening bersama untuk transaksi jual beli dengan verifikasi pihak ketiga dan pelacakan transaksi yang transparan.",
-    tags: ["Ionic", "Angular", "Restful-API", "Firebase"],
+    tags: ["Ionic", "Angular", "Restful-API", "Real-time Chat"],
     myRoleDescription: "Built the frontend in Ionic/Angular, including transaction status flows and real-time notifications powered by Firebase, and integrated the RESTful API for escrow verification.",
     myRoleDescriptionID: "Mengembangkan frontend menggunakan Ionic dan Angular, termasuk alur status transaksi serta notifikasi real-time berbasis Firebase, dan mengintegrasikan RESTful API untuk proses verifikasi rekening bersama.",
     year: 2022,
@@ -124,7 +124,7 @@ export default function SelectedProjects() {
     descriptionID: "Aplikasi berita yang memanfaatkan API publik untuk menyajikan headline terkini dengan pengalaman membaca yang nyaman di perangkat mobile.",
     longDescription: "Sandiwara News Mobile aggregates daily news summaries from multiple sources, with bookmarking and topic-based notifications.",
     longDescriptionID: "Sandiwara News Mobile mengumpulkan ringkasan berita harian dari berbagai sumber serta menyediakan fitur bookmark dan notifikasi berdasarkan topik yang diminati pengguna.",
-    tags: ["Swift", "iOS", "Core ML"],
+    tags: ["Flutter", "API", "Offline Support", "Push Notification"],
     myRoleDescription: "Designed the adaptive news feed and topic filtering logic, and built a Core ML-based recommendation system to surface articles matching user reading patterns.",
     myRoleDescriptionID: "Merancang feed berita adaptif dan logika penyaringan topik, serta membangun sistem rekomendasi berbasis Core ML untuk menampilkan artikel yang sesuai dengan pola baca pengguna.",
     year: 2023,
@@ -137,13 +137,13 @@ export default function SelectedProjects() {
     descriptionID: "Aplikasi peminjaman e-book milik Perpustakaan Kota Bukittinggi yang memungkinkan masyarakat mengakses koleksi digital secara jarak jauh.",
     longDescription: "Perpustakaan Digital provides an e-book catalog with borrowing and return tracking through a user-friendly mobile interface.",
     longDescriptionID: "Perpustakaan Digital menyediakan katalog e-book lengkap dengan fitur peminjaman dan pelacakan pengembalian melalui antarmuka mobile yang mudah digunakan.",
-    tags: ["Swift", "iOS", "AI"],
+    tags: ["Laravel", "Livewire", "Javascript", "Ebook Reader"],
     myRoleDescription: "Led development of the catalog system and user authentication, and built a preference-based book recommendation engine.",
     myRoleDescriptionID: "Memimpin pengembangan sistem katalog dan autentikasi pengguna, serta membangun mesin rekomendasi buku berdasarkan preferensi pengguna.",
     year: 2024,
     institution: "Perpustakaan Kota Bukittinggi",
     linkToURL: "https://pusdigi.bukittinggikota.go.id",
-    linkToGithub: "https://github.com/ridho15/perpustakaan_digital"
+    // linkToGithub: "https://github.com/ridho15/perpustakaan_digital"
   },
   {
     title: "TPP Bukittinggi",
@@ -151,7 +151,7 @@ export default function SelectedProjects() {
     descriptionID: "Aplikasi perhitungan Tambahan Penghasilan Pegawai (TPP) yang terintegrasi dengan data absensi untuk menghasilkan perhitungan insentif yang akurat dan otomatis.",
     longDescription: "TPP Bukittinggi automatically calculates employee incentives based on attendance and performance data, with transparent reporting.",
     longDescriptionID: "TPP Bukittinggi secara otomatis menghitung insentif pegawai berdasarkan data kehadiran dan kinerja, serta menyediakan laporan yang transparan dan mudah dipahami.",
-    tags: ["Swift", "iOS", "AI"],
+    tags: ["Laravel", "JasperReport", "API", "Tax Calculation"],
     myRoleDescription: "Designed the incentive calculation logic, integrated attendance data pipelines, and built the employee-facing reporting views.",
     myRoleDescriptionID: "Merancang logika perhitungan insentif, mengintegrasikan alur data absensi, dan membangun tampilan laporan yang dapat diakses langsung oleh pegawai.",
     year: 2024,
