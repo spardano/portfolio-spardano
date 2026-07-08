@@ -72,7 +72,7 @@ export default function SelectedProjects() {
     longDescription: "Comano is an educational iPad app that supports public speaking practice with audio, text, and visual feedback to help users refine pronunciation and delivery.",
     longDescriptionID: "Comano adalah aplikasi edukasi untuk iPad yang mendukung latihan public speaking dengan umpan balik berupa audio, teks, dan visual guna membantu pengguna meningkatkan pelafalan dan penyampaian materi.",
     tags: ["iPad", "Swift", "Core Data", "Sound Analysis"],
-    myRoleDescription: "Built the audio-video recording module, implemented movement and gesture analysis using Sound Analysis, and developed the instant feedback rendering system with Core Data for local storage.",
+    myRoleDescription: "Created the front-end using swiftUI, ensuring a pixel-perfect design from the design mockups. Integrated speechAnalyzer to provide real-time speech feedback, integrated Apple Intelligence combine with local storage for structured feedback.",
     myRoleDescriptionID: "Mengembangkan modul perekaman audio dan video, mengimplementasikan analisis gerakan serta gestur menggunakan Sound Analysis, dan membangun sistem umpan balik instan dengan Core Data untuk penyimpanan lokal.",
     year: 2025,
     institution: "Apple Developer Academy @ Infinite Learning Batam",
